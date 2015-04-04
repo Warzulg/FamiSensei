@@ -1,6 +1,6 @@
 package music.logic;
 
-public class Note {
+public class Note implements Comparable{
 	char pitch;
 	int octave;
 	boolean halftone;
@@ -14,6 +14,11 @@ public class Note {
 		{
 			return pitch + " - " + octave;
 		}
+	}
+	@Override
+	public int compareTo(Object arg0) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
