@@ -1,5 +1,7 @@
 package music.logic;
 
+
+
 public class Tick implements Comparable {
 	Note note;
 	/**

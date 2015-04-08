@@ -21,6 +21,7 @@ public class Note implements Comparable {
 	public static final HashMap<Integer, Character> valueToNoteSymbol;
 	static {
 		valueToNoteSymbol = new HashMap<Integer, Character>();
+		valueToNoteSymbol.put(0, 'H');
 		valueToNoteSymbol.put(1, 'C');
 		valueToNoteSymbol.put(2, 'D');
 		valueToNoteSymbol.put(3, 'E');
@@ -57,7 +58,7 @@ public class Note implements Comparable {
 	
 	public char getPitch()
 	{
-		return Note.valueToNoteSymbol.get(this.pitchValue % 7 == 0 ? 7 : this.pitchValue);
+		return Note.valueToNoteSymbol.get(this.pitchValue);
 	}
 
 	@Override
