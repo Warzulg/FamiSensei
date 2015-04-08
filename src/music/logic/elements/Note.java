@@ -41,7 +41,7 @@ public class Note implements Comparable {
 	/**
 	 * true, if the note is a halftone
 	 */
-	boolean halftone;
+	private boolean halftone;
 
 	public int getPitchValue() {
 		return pitchValue;
@@ -91,5 +91,15 @@ public class Note implements Comparable {
 		 }
 	
 	 }
+
+	public boolean isHalftone() {
+		return halftone;
+	}
+
+	public void setHalftone(boolean halftone) {
+		this.halftone = halftone;
+	}
+	 
+	 
 
 }

@@ -2,17 +2,17 @@ package music.logic.elements;
 
 
 
-public class Tick implements Comparable {
-	Note note;
+public class InstrumentTick implements Comparable {
+	private Note note;
 	/**
 	 * -1 if not available
 	 */
-	int volumn;
+	private int volumn;
 	/**
 	 * -1 if no instrument is available
 	 */
-	int instrument;
-	Effect[] effects;
+	private int instrument;
+	private Effect[] effects;
 	
 	
 
@@ -74,4 +74,62 @@ public class Tick implements Comparable {
 		
 		
 	}
+
+
+
+
+	public Note getNote() {
+		return note;
+	}
+
+
+
+
+	public void setNote(Note note) {
+		this.note = note;
+	}
+
+
+
+
+	public int getVolumn() {
+		return volumn;
+	}
+
+
+
+
+	public void setVolumn(int volumn) {
+		this.volumn = volumn;
+	}
+
+
+
+
+	public int getInstrument() {
+		return instrument;
+	}
+
+
+
+
+	public void setInstrument(int instrument) {
+		this.instrument = instrument;
+	}
+
+
+
+
+	public Effect[] getEffects() {
+		return effects;
+	}
+
+
+
+
+	public void setEffects(Effect[] effects) {
+		this.effects = effects;
+	}
+	
+	
 }
