@@ -2,17 +2,10 @@ package music.logic.elements;
 
 
 
-public class InstrumentTick implements Comparable {
+public class InstrumentTick extends Tick{
 	private Note note;
-	/**
-	 * -1 if not available
-	 */
-	private int volumn;
-	/**
-	 * -1 if no instrument is available
-	 */
-	private int instrument;
-	private Effect[] effects;
+	
+	
 	
 	
 
@@ -29,27 +22,27 @@ public class InstrumentTick implements Comparable {
 			tickString.append(this.note.toString());
 		}
 		
-		if(this.volumn == -1)
+		if(this.getVolumn() == -1)
 		{
 			tickString.append(" ..");
 		}
 		else
 		{
-			tickString.append(" " + String.format("%02X", this.volumn));
+			tickString.append(" " + String.format("%02X", this.getVolumn()));
 		}
 		
-		if(this.instrument == -1)
+		if(this.getInstrument() == -1)
 		{
 			tickString.append(" ..");
 		}
 		else
 		{
-			tickString.append(" " + String.format("%01X", this.instrument));
+			tickString.append(" " + String.format("%01X", this.getInstrument()));
 		}
 		
 		
 				 
-		for(Effect effect : this.effects)
+		for(Effect effect : this.getEffects())
 		{
 			if (effect == null)
 			{
@@ -92,44 +85,7 @@ public class InstrumentTick implements Comparable {
 
 
 
-	public int getVolumn() {
-		return volumn;
-	}
-
-
-
-
-	public void setVolumn(int volumn) {
-		this.volumn = volumn;
-	}
-
-
-
-
-	public int getInstrument() {
-		return instrument;
-	}
-
-
-
-
-	public void setInstrument(int instrument) {
-		this.instrument = instrument;
-	}
-
-
-
-
-	public Effect[] getEffects() {
-		return effects;
-	}
-
-
-
-
-	public void setEffects(Effect[] effects) {
-		this.effects = effects;
-	}
+	
 	
 	
 }
