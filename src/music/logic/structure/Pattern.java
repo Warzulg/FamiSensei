@@ -7,7 +7,7 @@ public class Pattern {
 	 * The columns in this pattern. Columns can be either InstrumentColumns or
 	 * NoiseColumns
 	 */
-	Column[] columns;
+	private Column[] columns;
 
 	@Override
 	public String toString() {
@@ -31,5 +31,15 @@ public class Pattern {
 		
 		
 	}
+
+	public Column[] getColumns() {
+		return columns;
+	}
+
+	public void setColumns(Column[] columns) {
+		this.columns = columns;
+	}
+	
+	
 
 }

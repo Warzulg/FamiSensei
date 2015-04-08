@@ -1,18 +1,20 @@
 package music.logic.structure;
 
-import music.logic.elements.Tick;
+import music.logic.elements.InstrumentTick;
 
 public class InstrumentColumn extends Column {
 
-	Tick[] ticks;
+	private InstrumentTick[] ticks;
 
-	public Tick[] getTicks() {
+	public InstrumentTick[] getTicks() {
 		return ticks;
 	}
 
-	public void setTicks(Tick[] ticks) {
+	public void setTicks(InstrumentTick[] ticks) {
 		this.ticks = ticks;
 	}
+	
+	
 	
 	
 

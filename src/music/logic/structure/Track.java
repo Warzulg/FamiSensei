@@ -1,8 +1,8 @@
 package music.logic.structure;
 
 public class Track {
-	String header;
-	Pattern[] patterns;
+	private String header;
+	private Pattern[] patterns;
 
 	@Override
 	public String toString() {
@@ -20,6 +20,24 @@ public class Track {
 		trackString.append("# End of export\n");
 		return trackString.toString();
 	}
+
+	public String getHeader() {
+		return header;
+	}
+
+	public void setHeader(String header) {
+		this.header = header;
+	}
+
+	public Pattern[] getPatterns() {
+		return patterns;
+	}
+
+	public void setPatterns(Pattern[] patterns) {
+		this.patterns = patterns;
+	}
+	
+	
 	
 	
 
