@@ -1,4 +1,4 @@
-package music.logic;
+package music.logic.structure;
 
 public class Track {
 	String header;
