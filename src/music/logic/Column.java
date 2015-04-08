@@ -1,7 +1,7 @@
 package music.logic;
 
-public class Column {
+public abstract class Column {
 	
-	Tick[] ticks;
+	
 
 }
