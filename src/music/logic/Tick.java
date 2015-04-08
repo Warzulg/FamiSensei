@@ -5,6 +5,7 @@ public class Tick implements Comparable {
 	int volumn;
 	int instrument;
 	Effect[] effects;
+
 	
 	@Override
 	public int compareTo(Object o) {

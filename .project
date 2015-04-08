@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>N163_Necrophageon_-_Donkey_Kong_Country_2_-_Stickerbrush_Symphony.txt</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Downloads/FamiTracker-v0.4.6/N163_Necrophageon_-_Donkey_Kong_Country_2_-_Stickerbrush_Symphony.txt</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
