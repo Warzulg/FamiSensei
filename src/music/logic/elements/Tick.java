@@ -1,4 +1,4 @@
-package music.logic;
+package music.logic.elements;
 
 
 

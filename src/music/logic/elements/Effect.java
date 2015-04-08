@@ -1,4 +1,4 @@
-package music.logic;
+package music.logic.elements;
 
 public class Effect {
 	char value;
