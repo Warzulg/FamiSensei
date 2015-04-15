@@ -3,6 +3,7 @@ package music.logic.elements;
 
 
 public class InstrumentTick extends Tick{
+	
 	private Note note;
 	
 	
@@ -82,8 +83,7 @@ public class InstrumentTick extends Tick{
 		this.note = note;
 	}
 
-
-
+	
 
 	
 	

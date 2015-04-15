@@ -1,76 +1,75 @@
 package music.logic.elements;
 
-import java.lang.instrument.IllegalClassFormatException;
-import java.util.HashMap;
-
-public class Note implements Comparable {
-
-	public static final HashMap<Character, Integer> noteSymbolToNoteValue;
-	static {
-		noteSymbolToNoteValue = new HashMap<Character, Integer>();
-		noteSymbolToNoteValue.put('C', 1);
-		noteSymbolToNoteValue.put('D', 2);
-		noteSymbolToNoteValue.put('E', 3);
-		noteSymbolToNoteValue.put('F', 4);
-		noteSymbolToNoteValue.put('G', 5);
-		noteSymbolToNoteValue.put('A', 6);
-		noteSymbolToNoteValue.put('H', 7);
-	}
-	
-	
-	public static final HashMap<Integer, Character> valueToNoteSymbol;
-	static {
-		valueToNoteSymbol = new HashMap<Integer, Character>();
-		valueToNoteSymbol.put(0, 'H');
-		valueToNoteSymbol.put(1, 'C');
-		valueToNoteSymbol.put(2, 'D');
-		valueToNoteSymbol.put(3, 'E');
-		valueToNoteSymbol.put(4, 'F');
-		valueToNoteSymbol.put(5, 'G');
-		valueToNoteSymbol.put(6, 'A');
-		valueToNoteSymbol.put(7, 'H');
-	}
-	
-	
-
+public class Note {
+	 
 	/**
-	 * A numeric value including information about the note and its octave
+	 * all available note symbols. note pitch = symbol index - 1
+	 */
+	private final char[] PITCH_SYMBOLS = {'C','D','E','F','G','A','H'};
+	
+	/**
+	 * numerical representation of note and octave (pitch + octave * 7)
 	 */
 	private int pitchValue;
-
-	/**
-	 * true, if the note is a halftone
-	 */
+	
 	private boolean halftone;
-
-	public int getPitchValue() {
+	
+	/**
+	 * CONSTRUCTOR
+	 */
+	public Note(int pitchValue) {
+		
+		this.pitchValue = pitchValue;
+		
+	}
+	
+	private int getPitchValue() {
 		return pitchValue;
 	}
-
-	public void setPitchValue(char note, int octave) {
-		this.pitchValue = note * Note.noteSymbolToNoteValue.get(note);
+	
+	private int getPitch() {
+		return pitchValue % 7;
 	}
 	
-	public int getOctave()
-	{
-		return this.pitchValue / 7;
+	private char getPitchSymbol() {
+		return PITCH_SYMBOLS[getPitch() - 1];
 	}
 	
-	public char getPitch()
-	{
-		return Note.valueToNoteSymbol.get(this.pitchValue);
+	private int getOctave() {
+		return pitchValue / 7;
 	}
-
-	@Override
-	public String toString() {
-		if (this.halftone) {
-			return this.getPitch() + " # " + this.getOctave();
+	
+	private void setPitchValue(int value) {
+		pitchValue = value;
+	}
+	
+	private void raiseNote(int n) {
+		pitchValue += n;
+		fixPitchValue();
+	}
+	
+	private void raiseNote(int n, boolean halftone) {
+		if(halftone) {
+			raiseNote(n + 1);
+			setHalftone(false);
 		} else {
-			return this.getPitch() + " - " + this.getOctave();
+			raiseNote(n);
 		}
 	}
+	
+	private void raiseOctave(int n) {
+		pitchValue += n * 7;
+		fixPitchValue();
+	}
 
-	 @Override
+	private void fixPitchValue() {
+		if(pitchValue < 0) {
+			pitchValue = (pitchValue % 7) * -1;
+		} else if(pitchValue > 49) {
+			raiseOctave( -((pitchValue % 49) / 7) );
+		}
+	}
+	
 	 public int compareTo(Object note2) {
 		 if(note2 == null || !(note2 instanceof Note))
 		 {
@@ -91,15 +90,13 @@ public class Note implements Comparable {
 		 }
 	
 	 }
-
-	public boolean isHalftone() {
-		return halftone;
-	}
-
-	public void setHalftone(boolean halftone) {
-		this.halftone = halftone;
-	}
 	 
+	 public boolean isHalftone() {
+		 return halftone;
+	 }
 	 
-
+	 private void setHalftone(boolean halftone) {
+		 this.halftone = halftone;
+	 }
+	 
 }
