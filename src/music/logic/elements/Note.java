@@ -70,6 +70,15 @@ public class Note {
 		}
 	}
 	
+	@Override
+	public String toString() {
+		if (halftone) {
+			return getPitchSymbol() + "#" + getOctave();
+		} else {
+			return getPitchSymbol() + "-" + getOctave();
+		}
+	}
+	
 	 public int compareTo(Object note2) {
 		 if(note2 == null || !(note2 instanceof Note))
 		 {
