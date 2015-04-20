@@ -12,36 +12,22 @@ public abstract class Tick implements Comparable{
 	 */
 	private Instrument instrument;
 	private Effect[] effects;
-	/**
-	 * row number in hexadecimal
-	 */
-	private int row;
 	
 	/**
 	 * CONSTRUCTOR
 	 */
-	public Tick(int row, int volumn, Note note, Instrument instrument, Effect[] effects) {
-		this.row = row;
+	public Tick(int volumn, Note note, Instrument instrument, Effect[] effects) {
 		this.volumn = volumn;
 		this.note = note;
 		this.instrument = instrument;
 		this.effects = effects;
 	}
 	
-	public Tick(int row) {
-		this.row = row;
+	public Tick() {
 		this.volumn = -1;
 		this.note = null;
 		this.instrument = null;
 		this.effects = null;
-	}
-	
-	public int getRow() {
-		return row;
-	}
-	
-	public void setRow(int row) {
-		this.row = row;
 	}
 	
 	public Note getNote() {
@@ -78,8 +64,7 @@ public abstract class Tick implements Comparable{
 	
 	@Override
 	public String toString() {
-		return String.format("ROW %s : %s %02d %0d %s %s %s ",
-				row != -1 ? Integer.toHexString(row) : "...",
+		return String.format(" : %s %02d %0d %s %s %s ",
 				note!= null ? note.toString() : "...",
 				instrument != null ? instrument.getNumber() : "..",
 				volumn != -1 ? volumn : ".",

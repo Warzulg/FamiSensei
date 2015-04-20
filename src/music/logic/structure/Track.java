@@ -1,9 +1,22 @@
 package music.logic.structure;
 
+import music.logic.elements.*;
+
 public class Track {
+	
+	
 	private String header;
 	private Pattern[] patterns;
 
+	/**
+	 * CONSTRUCTOR
+	 */
+	public Track() {
+		
+		
+		
+	}
+	
 	@Override
 	public String toString() {
 		StringBuilder trackString =new StringBuilder();
@@ -38,7 +51,4 @@ public class Track {
 	}
 	
 	
-	
-	
-
 }
