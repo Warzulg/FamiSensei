@@ -8,7 +8,23 @@ public class Pattern {
 	 * NoiseColumns
 	 */
 	private Column[] columns;
+	private int length;
 
+	/**
+	 * CONSTRUCTOR
+	 */
+	public Pattern(int length) {
+		
+		this.length = length;
+		//initialize the columns with the proper channel numbers and length:
+		columns = new Column[4];
+		for(int i = 0; i < 4; i++) {
+			columns[i].setChannelNr(i);
+			columns[i].setLength(length);
+		}
+		
+	}
+	
 	@Override
 	public String toString() {
 		StringBuilder patternString = new StringBuilder();
@@ -40,6 +56,9 @@ public class Pattern {
 		this.columns = columns;
 	}
 	
+	public int getLength() {
+		return length;
+	}
 	
 
 }

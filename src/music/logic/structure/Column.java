@@ -3,10 +3,19 @@ package music.logic.structure;
 public abstract class Column {
 
 	/**
-	 * The number of instrument defined in the header, this column plays
+	 * number identifying the channel. 5th channel (DPCM) not included.
+	 * 0 = Pulse 1; 1 = Pulse 2; 2 = Triangle; 3 = Noise
 	 */
 	private int channelNr;
 	private int length;
+	
+	/**
+	 * CONSTRUCTOR
+	 */
+	public Column(int channelNr, int length) {
+		this.channelNr = channelNr;
+		this.length = length;
+	}
 	
 	public int getChannelNr() {
 		return channelNr;

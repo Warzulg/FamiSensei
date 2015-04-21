@@ -7,13 +7,18 @@ public class Track {
 	
 	private String header;
 	private Pattern[] patterns;
+	/**
+	 * length of the song / amount of patterns
+	 */
+	private int length;
 
 	/**
 	 * CONSTRUCTOR
 	 */
-	public Track() {
+	public Track(int length) {
 		
-		
+		this.length = length;
+		patterns = new Pattern[length];
 		
 	}
 	
@@ -40,6 +45,19 @@ public class Track {
 
 	public void setHeader(String header) {
 		this.header = header;
+	}
+	
+	public void buildHeader(String title, String author, String year, String comment) {
+		setHeader(
+				String.format("# FamiTracker text export 0.4.2\n\n"
+							+ "# Song information\n\n"
+							+ "TITLE           %s\n"
+							+ "AUTHOR          %s\n"
+							+ "COPYRIGHT       %s\n\n"
+							+ "# Song comment\n"
+							+ "COMMENT %s\n\n",
+						title, author, year, comment)
+				);
 	}
 
 	public Pattern[] getPatterns() {
