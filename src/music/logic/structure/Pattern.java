@@ -16,11 +16,14 @@ public class Pattern {
 	public Pattern(int length) {
 		
 		this.length = length;
-		//initialize the columns with the proper channel numbers and length:
+		//initialize the columns with the proper channel numbers + types and length:
 		columns = new Column[4];
 		for(int i = 0; i < 4; i++) {
-			columns[i].setChannelNr(i);
-			columns[i].setLength(length);
+			if(i != 3) {
+				columns[i] = new InstrumentColumn(i, length);
+			} else {
+				columns[i] = new NoiseColumn(i, length);
+			}
 		}
 		
 	}

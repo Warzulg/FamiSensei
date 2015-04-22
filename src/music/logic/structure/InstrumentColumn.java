@@ -6,6 +6,14 @@ public class InstrumentColumn extends Column {
 
 	private InstrumentTick[] ticks;
 
+	/**
+	 * CONSTRUCTOR
+	 */
+	public InstrumentColumn(int channelNr, int length) {
+		super(channelNr, length);
+		
+	}
+	
 	public InstrumentTick[] getTicks() {
 		return ticks;
 	}

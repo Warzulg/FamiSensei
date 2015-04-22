@@ -32,7 +32,7 @@ public class InstrumentTick extends Tick{
 			tickString.append(" " + String.format("%02X", this.getVolumn()));
 		}
 		
-		if(this.getInstrument() == -1)
+		if(this.getInstrument() == null)
 		{
 			tickString.append(" ..");
 		}
