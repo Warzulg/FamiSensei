@@ -68,5 +68,10 @@ public class Track {
 		this.patterns = patterns;
 	}
 	
+	public void setPatternLength(int length) {
+		for(int i = 0; i < this.length; i++)
+			patterns[i] = new Pattern(length);
+	}
+	
 	
 }
