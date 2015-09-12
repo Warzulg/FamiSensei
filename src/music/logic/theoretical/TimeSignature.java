@@ -20,6 +20,7 @@ public class TimeSignature {
 		
 		this.beatsAmount = beatsAmount;
 		this.beatsType = beatsType;
+		this.noteLength = noteLength;
 		
 	}
 	public TimeSignature() {
