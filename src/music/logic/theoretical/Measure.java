@@ -19,6 +19,15 @@ public class Measure {
 		
 	}
 	
+	// GETTER
+	public TimeSignature getTimeSignature() {
+		return timeSignature;
+	}
+	public Note[] getNotes() {
+		return notes;
+	}
+	
+	
 	//// RANDOMIZING METHODS
 	// for randomizing musical structures and different aspects of the measure.
 	
@@ -26,7 +35,7 @@ public class Measure {
 	 * inserts rests at random points in the measure.
 	 * @param n number of rests to be inserted into the measure.
 	 */
-	public void randomizeRests(int n) {
+	public void randRests(int n) {
 		
 		do {
 			notes[rand.nextInt(notes.length)] = null;
